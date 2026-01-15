@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maske Needs You!</title>
+    <style>
+        /* --- TUXEDO CAT COLOR PALETTE --- */
+        :root {
+            --tuxedo-black: #1a1a1a;
+            --tuxedo-white: #ffffff;
+            --nose-pink: #ffb7b2; /* Cute accent color */
+            --soft-gray: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--tuxedo-black);
+            color: var(--tuxedo-black);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--tuxedo-white);
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--tuxedo-white);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--tuxedo-black);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: var(--tuxedo-black);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--tuxedo-black);
+            box-shadow: 5px 5px 0px var(--nose-pink);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            display: inline-block;
+            border-bottom: 3px solid var(--nose-pink);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        /* --- MAP SECTION --- */
+        .blueprint-container {
+            background-color: var(--soft-gray);
+            border: 2px dashed #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .blueprint-img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            /* In case image is missing */
+            min-height: 200px; 
+            background-color: #ddd; 
+        }
+
+        .legend {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .legend li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        /* Legend dots */
+        .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        .dot-red { background-color: #e74c3c; } /* Food Stash */
+        .dot-blue { background-color: #031b2b; } /* Water */
+        .dot-green { background-color: #59ba98; } /* Bowls */
+        .dot-yellow { background-color: #f1c40f; } /* Toys */
+
+        /* --- TASK LIST (CUSTOM BULLETS) --- */
+        .task-list {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .task-list li {
+            position: relative;
+            padding-left: 50px; /* Space for the cat face */
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 1.1rem;
+        }
+
+        /* The Custom Bullet Point (Maske's Face) */
+        .task-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-image: url('maske-face.png'); /* FILE REQUIREMENT */
+            background-size: cover;
+            border: 2px solid var(--tuxedo-black);
+            background-color: #ccc; /* Fallback color */
+        }
+
+        /* --- BUTTONS (PAWS) --- */
+        .contact-section {
+            text-align: center;
+            background-color: var(--tuxedo-black);
+            color: white;
+            padding-bottom: 50px;
+        }
+
+        .contact-section h2 {
+            border-color: white;
+            color: white;
+        }
+
+        .paw-btn {
+            background-color: var(--nose-pink);
+            color: var(--tuxedo-black);
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .paw-btn:hover {
+            transform: scale(1.05);
+            background-color: white;
+        }
+
+        .paw-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 400px) {
+            h1 { font-size: 2rem; }
+            .legend { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <!-- FILE REQUIREMENT: maske-main.jpg -->
+            <img src="maske-main.png" alt="Maske the Cat" class="hero-img">
+            <h1>Maske Needs You!</h1>
+            <p>Thank you for looking after our tuxedo gentleman 🐾</p>
+        </header>
+
+        <!-- SECTION 1: THE MAP -->
+        <section>
+            <h2>🏠 The House Map</h2>
+            <p>Here is where you can find everything.</p>
+            
+            <div class="blueprint-container">
+                <!-- FILE REQUIREMENT: house-layout.jpg -->
+                <img src="house-layout.jpeg" alt="House Layout Blueprint" class="blueprint-img">
+            </div>
+
+            <ul class="legend">
+                <li><span class="dot dot-green"></span> Feeding Bowls</li>
+                <li><span class="dot dot-blue"></span> Water Fountains</li>
+                <li><span class="dot dot-red"></span> Food Stash (Wet/Dry)</li>
+                <li><span class="dot dot-yellow"></span> Toys</li>
+            </ul>
+            <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
+                <em>*Please refer to the colored dots on the map above to locate items.</em>
+            </p>
+        </section>
+
+        <!-- SECTION 2: DAILY CHECKLIST -->
+        <section>
+            <h2>📝 Daily Checklist</h2>
+            <p>Please follow these steps in order:</p>
+
+            <ul class="task-list">
+                <li>
+                    <strong>Fresh Air:</strong> Open some windows from the top to refresh the air in the house while you do the other steps.
+                </li>
+                <li>
+                    <strong>Clean Bowl:</strong> Rinse the wet food bowl with hot water. Maske utensils for cleaning and refilling is next to kitchen sink in a green bowl.
+                </li>
+                <li>
+                    <strong>The Refill:</strong> Refill both the dry and wet food bowls. Half cup of dry food, half pack of wet food daily. Before serving wet food please add 3 table spoons of hot tap water and mash it up well before serving. And as a topping please add 3-4 dry freeze snacks on top. (Located in the food stash next to kitchen cabinet, dry freezes are in a cylinder box)
+                </li>
+                <li>
+                    <strong>Water Check:</strong> Check if the water fountains are still flowing nicely.
+                </li>
+                <li>
+                    <strong>Play Time:</strong> Play with Maske using his favorite toys (marked yellow on map) and pet him as much as you can.
+                </li>
+                <li>
+                    <strong>Safety First:</strong> Close all windows securely before you leave.
+                </li>
+                <li>
+                    <strong>18th of January: </strong> 2-3 cm of hairball removal paste to be given orally, it's called bolo via. It's in the kitchen food stash.
+                </li>
+            </ul>
+        </section>
+
+        <!-- FOOTER / CONTACT -->
+        <section class="contact-section">
+            <h2>📞 Emergency?</h2>
+            <p>If anything looks wrong or you need me:</p>
+            
+            <!-- Link this to your actual phone number -->
+            <a href="tel:+41782589323" class="paw-btn">
+                <span class="paw-icon">🐾</span> Call Me
+            </a>
+            <br>
+            <a href="https://signal.me/#p/+41782589323" class="paw-btn" style="margin-top: 15px; background-color: #3A76F0; color: white;">
+                <span class="paw-icon">🔒</span> Signal Message
+            </a>
+        </section>
+
+    </div>
+
+</body>
+</html>
