@@ -9,8 +9,9 @@
         :root {
             --tuxedo-black: #1a1a1a;
             --tuxedo-white: #ffffff;
-            --nose-pink: #ffb7b2; /* Cute accent color */
+            --nose-pink: #ffb7b2; 
             --soft-gray: #f4f4f4;
+            --alert-red: #e74c3c; /* Added for calendar marks */
         }
 
         body {
@@ -70,6 +71,61 @@
             margin-top: 0;
         }
 
+        /* --- CALENDAR WIDGET STYLES --- */
+        .calendar-widget {
+            background-color: var(--soft-gray);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #ddd;
+        }
+
+        .month-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr); /* 7 Days */
+            gap: 5px;
+        }
+
+        .day-label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .day {
+            background-color: white;
+            border-radius: 50%; /* Circle shape */
+            aspect-ratio: 1 / 1; /* Keep them perfect circles */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #333;
+            cursor: default;
+        }
+
+        .day.empty {
+            background-color: transparent;
+        }
+
+        /* THE RED MARKER FOR DATES NEEDED */
+        .day.marked {
+            background-color: var(--alert-red);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(231, 76, 60, 0.4);
+            transform: scale(1.1);
+        }
+
         /* --- MAP SECTION --- */
         .blueprint-container {
             background-color: var(--soft-gray);
@@ -84,7 +140,6 @@
             width: 100%;
             height: auto;
             border-radius: 5px;
-            /* In case image is missing */
             min-height: 200px; 
             background-color: #ddd; 
         }
@@ -110,10 +165,10 @@
 
         /* Legend dots */
         .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-        .dot-red { background-color: #e74c3c; } /* Food Stash */
-        .dot-blue { background-color: #031b2b; } /* Water */
-        .dot-green { background-color: #59ba98; } /* Bowls */
-        .dot-yellow { background-color: #f1c40f; } /* Toys */
+        .dot-red { background-color: #e74c3c; } 
+        .dot-blue { background-color: #031b2b; } 
+        .dot-green { background-color: #59ba98; } 
+        .dot-yellow { background-color: #f1c40f; } 
 
         /* --- TASK LIST (CUSTOM BULLETS) --- */
         .task-list {
@@ -123,13 +178,12 @@
 
         .task-list li {
             position: relative;
-            padding-left: 50px; /* Space for the cat face */
+            padding-left: 50px; 
             margin-bottom: 20px;
             line-height: 1.5;
             font-size: 1.1rem;
         }
 
-        /* The Custom Bullet Point (Maske's Face) */
         .task-list li::before {
             content: '';
             position: absolute;
@@ -138,10 +192,11 @@
             width: 35px;
             height: 35px;
             border-radius: 50%;
-            background-image: url('maske-face.PNG'); /* FILE REQUIREMENT */
+            /* Make sure this matches your GitHub file exactly */
+            background-image: url('maske-face.PNG'); 
             background-size: cover;
             border: 2px solid var(--tuxedo-black);
-            background-color: #ccc; /* Fallback color */
+            background-color: #ccc; 
         }
 
         /* --- BUTTONS (PAWS) --- */
@@ -183,10 +238,10 @@
             font-size: 1.5rem;
         }
 
-        /* Mobile tweaks */
         @media (max-width: 400px) {
             h1 { font-size: 2rem; }
             .legend { justify-content: center; }
+            .day { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -196,11 +251,64 @@
         
         <!-- HEADER -->
         <header>
-            <!-- FILE REQUIREMENT: maske-main.jpg -->
             <img src="maske-main.png" alt="Maske the Cat" class="hero-img">
             <h1>Maske Needs You!</h1>
             <p>Thank you for looking after our tuxedo gentleman 🐾</p>
         </header>
+
+        <!-- NEW SECTION: CALENDAR -->
+        <section>
+            <h2>📅 Dates Needed</h2>
+            <p>Please visit Maske on the days marked in <strong style="color: #e74c3c;">red</strong>:</p>
+            
+            <div class="calendar-widget">
+                <div class="month-name">February 2026</div>
+                
+                <div class="calendar-grid">
+                    <!-- Weekday Labels -->
+                    <div class="day-label">Mo</div>
+                    <div class="day-label">Tu</div>
+                    <div class="day-label">We</div>
+                    <div class="day-label">Th</div>
+                    <div class="day-label">Fr</div>
+                    <div class="day-label">Sa</div>
+                    <div class="day-label">Su</div>
+
+                    <!-- Days -->
+                    <!-- Feb 1, 2026 is a Sunday. So 6 empty slots before it. -->
+                    <!--div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div-->
+                    <!-- MARKED DATES (Edit "marked" class here to change dates) -->
+                    <div class="day marked">16</div>
+                    <div class="day marked">17</div>
+                    <div class="day marked">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                </div>
+            </div>
+        </section>
 
         <!-- SECTION 1: THE MAP -->
         <section>
@@ -208,7 +316,6 @@
             <p>Here is where you can find everything.</p>
             
             <div class="blueprint-container">
-                <!-- FILE REQUIREMENT: house-layout.jpg -->
                 <img src="house-layout.jpeg" alt="House Layout Blueprint" class="blueprint-img">
             </div>
 
@@ -261,7 +368,6 @@
             <h2>📞 Emergency?</h2>
             <p>If anything looks wrong or you need me:</p>
             
-            <!-- Link this to your actual phone number -->
             <a href="tel:+41782589323" class="paw-btn">
                 <span class="paw-icon">🐾</span> Call Me
             </a>
