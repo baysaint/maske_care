@@ -46,7 +46,7 @@ const CAT_CARE = {
       bowl: 'Main Bowl',
       recipe: '1/2 pack Lucky Lou + Sprinkle of Dry Freeze + 1 spoon Salmon Oil.',
       // Photo of Lucky Lou Wet Food
-      image: 'input_file_1.png', 
+      image: 'lucky-lou-wet.png', 
       notes: 'If he leaves any, bag it and put in the fridge immediately.'
     },
     {
@@ -57,7 +57,7 @@ const CAT_CARE = {
       bowl: 'Purple Bowl',
       recipe: '1/2 pack of Hydration Helper milk. Only if he is awake.',
       // Photo of Almo Nature Milk
-      image: 'input_file_4.png'
+      image: 'almo-nature-milk.png'
     },
     {
       time: '15:00 - 17:00',
@@ -67,7 +67,7 @@ const CAT_CARE = {
       bowl: 'Green Bowl',
       recipe: '1/2 pack of Lilo\'s Chicken Filet meat. Serve when he wakes up from his afternoon nap.',
       // Photo of Lucky Lou Chicken Filet
-      image: 'input_file_5.png'
+      image: 'lucky-lou-chicken.png'
     },
     {
       time: '19:00',
@@ -77,7 +77,7 @@ const CAT_CARE = {
       bowl: 'Main Bowl',
       recipe: '1/2 cup of Dry Food (The blue scoop is inside the pack).',
       // Photo of food cabinet/stash
-      image: 'input_file_0.png',
+      image: 'food-cabinet.png',
       notes: 'You can add morning leftovers on top if there are any.'
     }
   ] as Meal[],
@@ -153,7 +153,7 @@ export default function App() {
         <div className="bg-white p-6 rounded-[2.5rem] shadow-sm border border-gray-200 mb-8 flex items-center gap-6">
           <div className="relative">
              <img 
-                src="input_file_9.png" 
+                src="maske-main.png" 
                 alt="Maske the Cat" 
                 className="w-24 h-24 rounded-full border-4 border-indigo-50 object-cover shadow-inner bg-gray-100"
              />
@@ -177,12 +177,12 @@ export default function App() {
                  <PawPrint size={120} />
               </div>
               <h3 className="text-xs font-black uppercase tracking-widest opacity-70 mb-2">Visiting Window</h3>
-              <p className="text-2xl font-black mb-4">February 16 – 22, 2026</p>
+              <p className="text-2xl font-black mb-4">May 17 – 20, 2026</p>
               <div className="flex gap-2">
                 {[15, 16, 17, 18, 19, 20, 21].map((d) => (
-                  <div key={d} className={`flex flex-col items-center justify-center w-10 h-10 rounded-xl text-[10px] font-black ${[16, 17, 18].includes(d) ? 'bg-rose-500 text-white shadow-lg' : 'bg-white/10 text-white/50'}`}>
+                  <div key={d} className={`flex flex-col items-center justify-center w-10 h-10 rounded-xl text-[10px] font-black ${[17, 18, 19, 20].includes(d) ? 'bg-rose-500 text-white shadow-lg' : 'bg-white/10 text-white/50'}`}>
                     <span>{d}</span>
-                    <span className="uppercase text-[6px]">FEB</span>
+                    <span className="uppercase text-[6px]">MAY</span>
                   </div>
                 ))}
               </div>
@@ -254,7 +254,7 @@ export default function App() {
            </h3>
            <div className="bg-white rounded-[2.5rem] border border-gray-200 shadow-sm overflow-hidden">
               <img 
-                src="input_file_7.png" 
+                src="house-layout.jpeg" 
                 alt="House Map" 
                 className="w-full h-auto"
               />
@@ -290,7 +290,7 @@ export default function App() {
           </h3>
           <div className="bg-white p-6 rounded-[2.5rem] border border-gray-200 shadow-sm">
             <div className="mb-6 rounded-[1.5rem] overflow-hidden border border-gray-100">
-               <img src="input_file_6.png" alt="Cleaning Stash" className="w-full h-48 object-cover" />
+               <img src="cleaning-stash.png" alt="Cleaning Stash" className="w-full h-48 object-cover" />
                <div className="p-3 bg-gray-50 text-[10px] font-black text-center text-gray-400">KITCHEN CLEANING GEAR</div>
             </div>
 
@@ -365,7 +365,7 @@ export default function App() {
         <div className="max-w-xl mx-auto bg-white border border-gray-200 shadow-2xl rounded-[2rem] p-4 flex items-center justify-between">
            <div className="flex items-center gap-4 px-2">
               <div className="flex -space-x-3">
-                 <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="input_file_8.png" alt="Maske" />
+                 <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="maske-face.png" alt="Maske" />
                  <div className="inline-block h-10 w-10 rounded-full ring-2 ring-white bg-indigo-500 flex items-center justify-center text-white text-[10px] font-black">HOST</div>
               </div>
               <div>
