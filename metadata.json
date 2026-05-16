@@ -1,0 +1,8 @@
+{
+  "name": "Maske's Care Guide",
+  "description": "A dedicated home visitor app for Maske the cat, featuring meal pipelines, house maps, and daily care routines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
