@@ -370,14 +370,14 @@ export default function App() {
               </div>
               <div>
                 <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Emergency Line</p>
-                <p className="text-xs font-black text-gray-900 tracking-tight">+41 78 258 93 23</p>
+                <p className="text-xs font-black text-gray-900 tracking-tight">+41 000000000</p>
               </div>
            </div>
            <div className="flex gap-2">
-              <a href="tel:+41782589323" className="bg-gray-900 text-white w-12 h-12 rounded-2xl shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
+              <a href="tel:+41000000000" className="bg-gray-900 text-white w-12 h-12 rounded-2xl shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
                 <Phone size={22} />
               </a>
-              <a href="https://signal.me/#p/+41782589323" className="bg-[#3A76F0] text-white w-12 h-12 rounded-2xl shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
+              <a href="https://signal.me/#p/+41000000000" className="bg-[#3A76F0] text-white w-12 h-12 rounded-2xl shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
                 <MessageCircle size={22} />
               </a>
            </div>
